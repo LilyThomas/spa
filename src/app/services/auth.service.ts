@@ -13,7 +13,7 @@ export class AuthService {
     clientID: '67TDNOZO5ZlaTLWP2607F6daoVBTupQs',
     domain: 'pettinder.eu.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://securityprojectsl.netlify.com',
+    redirectUri: 'http://localhost:4200',
     scope: 'openid'
   });
 
