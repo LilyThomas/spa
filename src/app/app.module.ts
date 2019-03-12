@@ -7,11 +7,7 @@ import {AuthService} from './services/auth.service';
 import { HttpClientModule} from "@angular/common/http";
 import {Routes} from "@angular/router";
 import {OAuthModule } from "angular-oauth2-oidc-codeflow-pkce";
-import { OAuthService, UrlHelperService } from "angular-oauth2-oidc";
-
-export const routes: Routes = [
-  { path: '', component: AppComponent}
-];
+import { OAuthService, UrlHelperService } from "angular-oauth2-oidc-codeflow-pkce";
 
 @NgModule({
   declarations: [
@@ -22,6 +18,8 @@ export const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     OAuthModule.forRoot(),
+  ],
+  exports: [
   ],
   providers: [OAuthService, UrlHelperService],
   bootstrap: [AppComponent]
