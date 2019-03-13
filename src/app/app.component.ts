@@ -1,10 +1,10 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from './services/auth.service';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {JwksValidationHandler, OAuthService} from "angular-oauth2-oidc-codeflow-pkce";
 import { authConfig } from "./services/auth.service";
 import {logger} from "codelyzer/util/logger";
 import {Router} from "@angular/router";
+import {NamesService} from "./services/names.service";
 
 @Component({
   selector: 'app-root',
@@ -15,9 +15,11 @@ import {Router} from "@angular/router";
 export class AppComponent{
   title = 'Lily\'s & Simon\'s SPA';
 
-  iframeUrl = "/framebox";
+  names: any = [];
 
-  constructor(private oauthService: OAuthService, private router: Router){
+  constructor(private oauthService: OAuthService,
+              private router: Router,
+              private nameService: NamesService){
     this.configureWithNewConfigApi();
   }
 
@@ -35,10 +37,20 @@ export class AppComponent{
 
   logout() {
     this.oauthService.logOut();
+    // student code start here
     this.router.navigate(['']);
+    // student code end here
   }
 
+  // student code start here
   isAuthenticated() {
     return new Date().getTime() < this.oauthService.getAccessTokenExpiration();
   }
+
+  onNamesClick(){
+    this.nameService.getNames().subscribe(data => {
+      this.names = data;
+    })
+  }
+  // student code end here
 }
