@@ -6,6 +6,7 @@ import { HttpClientModule} from "@angular/common/http";
 import {OAuthModule } from "angular-oauth2-oidc-codeflow-pkce";
 import { OAuthService, UrlHelperService } from "angular-oauth2-oidc-codeflow-pkce";
 import {NamesService} from "./services/names.service";
+import {AuthInterceptor} from "./services/authInterceptor";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import {NamesService} from "./services/names.service";
   ],
   exports: [
   ],
-  providers: [OAuthService, UrlHelperService, NamesService],
+  providers: [OAuthService, UrlHelperService, NamesService, AuthInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

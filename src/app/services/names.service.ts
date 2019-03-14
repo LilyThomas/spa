@@ -6,13 +6,12 @@ import {map, catchError, tap} from "rxjs/internal/operators";
 @Injectable()
 export class NamesService {
 
-  jsonUrl: string = "/assets/names.json";
-
-
   constructor(private http: HttpClient) {
   }
 
+
   getNames(){
-    return this.http.get(this.jsonUrl);
+    return "Lily Thomas & Simon Put";
   }
+
 }
