@@ -5,6 +5,7 @@ import { Router, NavigationStart} from '@angular/router';
 import { OktaAuthService } from "@okta/okta-angular";
 import * as OktaSignIn from '@okta/okta-signin-widget';
 import {AuthService} from "./services/auth.service";
+import {type} from "os";
 
 @Component({
   selector: 'app-secure',

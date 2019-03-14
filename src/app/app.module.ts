@@ -17,8 +17,10 @@ import {RouterModule, Routes} from "@angular/router";
 const config = {
   clientId: '0oacr13u7sLCCvbJL356',
   issuer: 'https://dev-542608.okta.com/oauth2/auscqyqtxwGjIvjY7356',
-  redirectUri: window.location.origin
-}
+  redirectUri: window.location.origin,
+  idps: {type: 'GOOGLE', id: '12296744458-1m6bc259roj8i11e0lnuqk6bfe4htc9s.apps.googleusercontent.com'}
+
+};
 
 export function  onAuthRequired({oktaAuth, router}){
   router.navigate(['/login']);
