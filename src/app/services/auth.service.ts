@@ -23,5 +23,4 @@ export const authConfig: AuthConfig = {
 export class AuthService {
 
   constructor(){}
-
 }

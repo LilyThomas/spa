@@ -59,15 +59,7 @@ export class AppComponent{
   }
 
   onNamesClick(){
-    // console.error(localStorage.getItem("id_token"));
-    // console.error(localStorage.getItem("access_token"));
-    // console.log("hallo");
-    // console.info("hallo");
-    // this.http.get(this.nameService)
-
-    // getNames().subscribe(data => {
-    //   this.names = data;
-    // })
+    this.nameService.getNames().subscribe(data => this.names = data);
   }
 
 
