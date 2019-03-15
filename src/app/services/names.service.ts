@@ -5,8 +5,8 @@ import {OAuthService} from "angular-oauth2-oidc-codeflow-pkce";
 
 @Injectable()
 export class NamesService {
-
-  namesApiUrl: string = 'http://localhost:3000';
+// student code start
+  namesApiUrl: string = 'https://names-express.herokuapp.com/';
   authHeaders: HttpHeaders;
   token: string;
 
@@ -32,4 +32,6 @@ export class NamesService {
     // return this.http.get<string[]>(url);
     return this.http.get<string[]>(url, {headers: this.authHeaders});
   }
+
+  // student code end
 }
