@@ -8,7 +8,6 @@ import { OAuthService, UrlHelperService } from "angular-oauth2-oidc-codeflow-pkc
 import {NamesService} from "./services/names.service";
 import { AuthInterceptor} from "./services/authInterceptor";
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -21,8 +20,12 @@ import { AuthInterceptor} from "./services/authInterceptor";
   ],
   exports: [
   ],
-  providers: [OAuthService, UrlHelperService, NamesService, AuthInterceptor],
+  providers: [
+    OAuthService, UrlHelperService, NamesService, AuthInterceptor],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+}
 

@@ -7,6 +7,7 @@ import {OAuthService} from "angular-oauth2-oidc-codeflow-pkce";
 export class NamesService {
 // student code start
   namesApiUrl: string = 'https://names-express.herokuapp.com/';
+//   namesApiUrl: string = 'http://localhost:3000';
   authHeaders: HttpHeaders;
   token: string;
 
@@ -17,8 +18,11 @@ export class NamesService {
   //get names
   getNames(): Observable<string[]>{
     this.token = this.oauthService.getIdToken();
+    console.error(this.oauthService.getIdToken());
     // console.error(this.oauthService.getAccessToken());
+    // this.oauthService.initImplicitFlowInternal();
     // console.error(this.oauthService.getAuthorizationHeader());
+    // this.token = this.oauthService.getAccessToken();
 
     this.authHeaders = new HttpHeaders().set('Authorization', "Bearer " + this.token);
     // this.authHeaders = new HttpHeaders().set('Authorization', this.oauthService.getAuthorizationHeader());
@@ -30,7 +34,8 @@ export class NamesService {
     // console.error(this.authHeaders);
     // console.error(this.http.get<string[]>(url));
     // return this.http.get<string[]>(url);
-    return this.http.get<string[]>(url, {headers: this.authHeaders});
+    // return this.http.get<string[]>(url, {headers: this.authHeaders});
+    return this.http.get<string[]>(url, {headers: this.authHeaders})
   }
 
   // student code end
